@@ -13,11 +13,6 @@ function getCurrentPath() {
   return normalized || "/";
 }
 
-function getInitialTheme() {
-  const saved = window.localStorage.getItem("theme-mode");
-  return saved === "white" ? "white" : "dark";
-}
-
 function getPage(pathname) {
   switch (pathname) {
     case "/about":
@@ -38,7 +33,6 @@ function getPage(pathname) {
 
 export default function App() {
   const [pathname, setPathname] = useState(getCurrentPath);
-  const [themeMode, setThemeMode] = useState(getInitialTheme);
 
   useEffect(() => {
     const onPopState = () => setPathname(getCurrentPath());
@@ -50,18 +44,9 @@ export default function App() {
     setPathname(getCurrentPath());
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", themeMode);
-    window.localStorage.setItem("theme-mode", themeMode);
-  }, [themeMode]);
-
-  const toggleTheme = () => {
-    setThemeMode((prev) => (prev === "dark" ? "white" : "dark"));
-  };
-
   return (
     <div style={{ minHeight: "100vh", background: "var(--deep)" }}>
-      <Header themeMode={themeMode} onToggleTheme={toggleTheme} />
+      <Header />
       {getPage(pathname)}
       <Footer />
     </div>

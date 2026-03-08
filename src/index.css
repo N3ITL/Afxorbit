@@ -4,18 +4,6 @@
   --blue: #1d8cf8;
   --blue-bright: #45a8ff;
   --blue-glow: #0a6eea;
-  --deep: #03050f;
-  --navy: #070d1e;
-  --panel: #0c1526;
-  --surface: #111d33;
-  --muted: #3a506b;
-  --silver: #7a90a8;
-  --white: #f4f8ff;
-  --offwhite: #dce8f5;
-  --nav-link: #9aaec4;
-}
-
-:root[data-theme="white"] {
   --deep: #ffffff;
   --navy: #f6f9ff;
   --panel: #eef4ff;
@@ -86,16 +74,4 @@ body {
 
 .nav-link:hover::after {
   width: 100%;
-}
-
-.theme-toggle {
-  border: 1px solid rgba(29, 140, 248, 0.26);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--white);
-  padding: 0.42rem 0.85rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
 }

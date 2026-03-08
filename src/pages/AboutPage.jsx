@@ -14,13 +14,13 @@ const Styles = () => (
     :root {
       --blue: #1d8cf8;
       --blue-bright: #45a8ff;
-      --deep: #03050f;
-      --navy: #070d1e;
-      --panel: #0b1425;
-      --muted: #3a506b;
-      --silver: #6a84a0;
-      --white: #f4f8ff;
-      --offwhite: #c8d8ee;
+      --deep: #ffffff;
+      --navy: #f6f9ff;
+      --panel: #eef4ff;
+      --muted: #7a8ba1;
+      --silver: #334155;
+      --white: #0f172a;
+      --offwhite: #1e293b;
     }
 
     body {
