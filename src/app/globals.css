@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --blue: #1d8cf8;
+  --blue-bright: #45a8ff;
+  --blue-glow: #0a6eea;
+  --deep: #ffffff;
+  --navy: #f6f9ff;
+  --panel: #eef4ff;
+  --surface: #e7effa;
+  --muted: #7a8ba1;
+  --silver: #334155;
+  --white: #0f172a;
+  --offwhite: #1e293b;
+  --nav-link: #5b687a;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--deep);
+  color: var(--white);
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+}
+
+.preloader-orb {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(37,99,235,0.15));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 18px 48px rgba(10,15,30,0.18), inset 0 0 0 1px rgba(37,99,235,0.2);
+  animation: preloader-rotate 1.8s linear infinite;
+}
+
+.preloader-core {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1A56DB, #3B82F6);
+  box-shadow: 0 0 0 6px rgba(37,99,235,0.14);
+  animation: preloader-pulse 1.2s ease-in-out infinite;
+}
+
+.preloader-wordmark {
+  font-family: var(--font-bebas-neue), 'Bebas Neue', sans-serif;
+  letter-spacing: 0.14em;
+  font-size: 1.6rem;
+  color: #0A0F1E;
+  text-transform: uppercase;
+}
+.preloader-wordmark span {
+  color: #2563EB;
+  animation: preloader-glow 1.4s ease-in-out infinite;
+}
+
+@keyframes preloader-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(0.96); opacity: 0.9; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes preloader-glow {
+  0%,100% { text-shadow: 0 0 0px rgba(37,99,235,0.25); }
+  50% { text-shadow: 0 0 12px rgba(37,99,235,0.55); }
+}
+
+.font-display {
+  font-family: var(--font-bebas-neue), "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #1d8cf8 0%, #a0d4ff 45%, #1d8cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nav-link);
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: var(--blue);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}

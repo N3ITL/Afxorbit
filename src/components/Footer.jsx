@@ -1,3 +1,5 @@
+'use client';
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -64,7 +66,7 @@ function MarqueeStrip() {
 function FootLink({ label, href }) {
   const [hov, setHov] = useState(false);
   return (
-    <a
+    <Link
       href={href}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
@@ -85,7 +87,7 @@ function FootLink({ label, href }) {
         style={{ color: "#2563EB", fontSize: "0.42rem", flexShrink: 0 }}
       >◆</motion.span>
       {label}
-    </a>
+    </Link>
   );
 }
 
@@ -145,7 +147,7 @@ function Footer() {
           style={{ marginBottom: "4rem", paddingBottom: "3rem", borderBottom: "1px solid rgba(10,15,30,0.08)", display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "2rem" }}
         >
           {/* Wordmark */}
-          <a
+          <Link
             href="/"
             onMouseEnter={() => setHov(true)}
             onMouseLeave={() => setHov(false)}
@@ -161,7 +163,7 @@ function Footer() {
             }}
           >
             AFX<span style={{ color: hov ? "transparent" : "#2563EB", WebkitTextStroke: hov ? "1.5px rgba(37,99,235,0.5)" : "none" }}>o</span>RBIT
-          </a>
+          </Link>
 
           {/* Tagline + socials */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "1.2rem" }}>

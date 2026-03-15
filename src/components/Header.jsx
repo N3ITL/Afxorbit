@@ -1,3 +1,5 @@
+'use client';
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -32,7 +34,7 @@ function ScrollBar() {
 /* ── Logo ── */
 function Logo() {
   return (
-    <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+    <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem" }}>
       <div style={{
         width: 30, height: 30, borderRadius: 7,
         background: "linear-gradient(135deg,#1A56DB 0%,#3B82F6 100%)",
@@ -44,16 +46,16 @@ function Logo() {
       <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "1.45rem", letterSpacing: "0.1em", color: "#0A0F1E", lineHeight: 1 }}>
         AFX<span style={{ color: "#2563EB" }}>o</span>RBIT
       </span>
-    </a>
+    </Link>
   );
 }
 
 /* ── Single nav link ── */
 function NavLink({ link, isActive }) {
   return (
-    <a href={link.href} className={`hdr-nav-link${isActive ? " active" : ""}`}>
+    <Link href={link.href} className={`hdr-nav-link${isActive ? " active" : ""}`}>
       {link.label}
-    </a>
+    </Link>
   );
 }
 
@@ -126,10 +128,10 @@ function Header() {
             </div>
 
             {/* Book a Call — desktop */}
-            <a href="/#contact" className="hdr-desktop hdr-cta">
+            <Link href="/#contact" className="hdr-desktop hdr-cta">
               Book a Call
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </Link>
 
             {/* Hamburger — mobile */}
             <button
